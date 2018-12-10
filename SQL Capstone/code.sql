@@ -30,7 +30,7 @@ FROM first_touch ft
 JOIN page_visits pv
     ON ft.user_id = pv.user_id
     AND ft.first_touch_at = pv.timestamp
-    GROUP BY utm_campaign
+    GROUP BY 4
 ORDER BY 5 DESC;
 
 
@@ -49,7 +49,7 @@ FROM last_touch lt
 JOIN page_visits pv
     ON lt.user_id = pv.user_id
     AND lt.last_touch_at = pv.timestamp
-    GROUP BY utm_campaign
+    GROUP BY 4
 ORDER BY 5 DESC;
 
 
@@ -76,5 +76,5 @@ JOIN page_visits pv
     ON lt.user_id = pv.user_id
     AND lt.last_touch_at = pv.timestamp
     WHERE page_name = '4 - purchase'
-    GROUP BY utm_campaign
+    GROUP BY 4
 ORDER BY 5 DESC;
